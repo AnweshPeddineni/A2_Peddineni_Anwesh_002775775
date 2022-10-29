@@ -8,6 +8,27 @@ package model;
  *
  * @author anweshpeddineni
  */
-public class Encounter {
+public class Encounter extends PersonDetails {
+    
+    
+    private int encounter;
+
+    public int getEncounter() {
+        return encounter;
+    }
+
+    public void setEncounter(int encounter) {
+        this.encounter = encounter;
+    }
+    
+    public VitalSigns getVitalSigns() {
+        return vitalSigns;
+    }
+
+    public void setVitalSigns(VitalSigns vitalSigns) {
+        this.vitalSigns = vitalSigns;
+    }
+
+    VitalSigns vitalSigns;
     
 }

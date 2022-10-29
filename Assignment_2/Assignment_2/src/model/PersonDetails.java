@@ -4,6 +4,7 @@
  */
 package model;
 
+
 /**
  *
  * @author anweshpeddineni
@@ -15,28 +16,82 @@ public class PersonDetails {
     private String gender;
     private long cellPhoneNumber;
     private String emailID;
+ 
     
-    private String address;
-    private String city;
-    private String community;
-    private String hospital;
-    private String doctor;
+    
+//    City Cityx = new City();
+//    Community Communityx = new Community();
+//    Hospital Hospitalx = new Hospital();
+//    House Housex = new House();
+//    DoctorDetails Doctorx = new DoctorDetails();
+    
+//    private String address;
+//    private String city;
+//    private String community;
+//    private String hospital;
+//    private String doctor;
 
-    public String getHospital() {
-        return hospital;
+    
+    public Community getCommunity() {
+        return community;
     }
 
-    public void setHospital(String hospital) {
-        this.hospital = hospital;
+    public void setCommunity(Community community) {
+        this.community = community;
     }
 
-    public String getDoctor() {
+    Community community;
+    
+    
+    
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    City city;
+    
+    
+    
+    public House getHouse() {
+        return address;
+    }
+
+    public void setHouse(House house) {
+        this.address = house;
+    }
+
+    House address;
+    
+    
+    
+    public DoctorDetails getDoctorDetails() {
         return doctor;
     }
 
-    public void setDoctor(String doctor) {
-        this.doctor = doctor;
+    public void setDoctorDetails(DoctorDetails doctorDetails) {
+        this.doctor = doctorDetails;
     }
+
+    DoctorDetails doctor;
+    
+    
+    
+   public Hospital getHospital() {
+       return hospital;
+   }
+   
+   public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    Hospital hospital;
+    
+    
+    
 
     public String getName() {
         return name;
@@ -70,30 +125,8 @@ public class PersonDetails {
         this.gender = gender;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCommunity() {
-        return community;
-    }
-
-    public void setCommunity(String community) {
-        this.community = community;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
+   
     public long getCellPhoneNumber() {
         return cellPhoneNumber;
     }

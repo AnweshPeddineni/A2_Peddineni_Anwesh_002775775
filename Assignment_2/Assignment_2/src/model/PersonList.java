@@ -25,6 +25,18 @@ public class PersonList {
         this.list = list;
     }
     
+    public void addnewperson(PersonDetails pd){
+//        PersonDetails newperson = new PersonDetails();
+        list.add(pd);
+    }
     
+    public void deletepersons(PersonDetails ed){
+        
+        list.remove(ed);
+    }
+    
+    public ArrayList<PersonDetails> getPersonList(){
+        return list;
+    }
     
 }

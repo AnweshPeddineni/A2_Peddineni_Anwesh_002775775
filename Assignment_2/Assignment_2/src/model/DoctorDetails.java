@@ -8,6 +8,34 @@ package model;
  *
  * @author anweshpeddineni
  */
-public class DoctorDetails {
+public class DoctorDetails extends Hospital {
     private String doctor;
+    private String docUsername;
+    private String docPassword;
+
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
+
+    public String getDocUsername() {
+        return docUsername;
+    }
+
+    public void setDocUsername(String docUsername) {
+        this.docUsername = docUsername;
+    }
+
+    public String getDocPassword() {
+        return docPassword;
+    }
+
+    public void setDocPassword(String docPassword) {
+        this.docPassword = docPassword;
+    }
+    
+    
 }

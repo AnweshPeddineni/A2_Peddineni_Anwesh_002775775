@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UI;
+import model.PersonDetails;
+import model.PersonList;
 
 /**
  *
@@ -13,8 +15,10 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MaunJFrame
      */
+    PersonList list;
     public MainJFrame() {
         initComponents();
+        list = new PersonList();
     }
 
     /**
@@ -28,57 +32,67 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnHosAdmin = new javax.swing.JButton();
+        btnSysAdmin = new javax.swing.JButton();
+        btnDoctor = new javax.swing.JButton();
+        btnComAdmin = new javax.swing.JButton();
+        btnPatient = new javax.swing.JButton();
+        btnPerson = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton1.setText("Hos Admin");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnHosAdmin.setBackground(new java.awt.Color(204, 255, 204));
+        btnHosAdmin.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnHosAdmin.setText("Hos Admin");
+        btnHosAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHosAdminActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 153));
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton2.setText("Sys Admin");
-
-        jButton3.setBackground(new java.awt.Color(153, 255, 153));
-        jButton3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton3.setText("Doctor");
-
-        jButton4.setBackground(new java.awt.Color(255, 204, 51));
-        jButton4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton4.setText("Com Admin");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSysAdmin.setBackground(new java.awt.Color(255, 255, 153));
+        btnSysAdmin.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnSysAdmin.setText("Sys Admin");
+        btnSysAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSysAdminActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(153, 204, 255));
-        jButton5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton5.setText("Patient");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnDoctor.setBackground(new java.awt.Color(153, 255, 153));
+        btnDoctor.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnDoctor.setText("Doctor");
+        btnDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnDoctorActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(204, 255, 255));
-        jButton6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jButton6.setText("Person");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnComAdmin.setBackground(new java.awt.Color(255, 204, 51));
+        btnComAdmin.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnComAdmin.setText("Com Admin");
+        btnComAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnComAdminActionPerformed(evt);
+            }
+        });
+
+        btnPatient.setBackground(new java.awt.Color(153, 204, 255));
+        btnPatient.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnPatient.setText("Patient");
+        btnPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPatientActionPerformed(evt);
+            }
+        });
+
+        btnPerson.setBackground(new java.awt.Color(204, 255, 255));
+        btnPerson.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        btnPerson.setText("Person");
+        btnPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonActionPerformed(evt);
             }
         });
 
@@ -89,36 +103,36 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHosAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnComAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3, jButton4, jButton5});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnComAdmin, btnDoctor, btnHosAdmin, btnPatient, btnSysAdmin});
 
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(jButton2)
+                .addComponent(btnSysAdmin)
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
+                .addComponent(btnHosAdmin)
                 .addGap(32, 32, 32)
-                .addComponent(jButton4)
+                .addComponent(btnComAdmin)
                 .addGap(34, 34, 34)
-                .addComponent(jButton3)
+                .addComponent(btnDoctor)
                 .addGap(33, 33, 33)
-                .addComponent(jButton5)
+                .addComponent(btnPatient)
                 .addGap(33, 33, 33)
-                .addComponent(jButton6)
+                .addComponent(btnPerson)
                 .addContainerGap(334, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3, jButton4, jButton5});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnComAdmin, btnDoctor, btnHosAdmin, btnPatient, btnSysAdmin});
 
         jSplitPane1.setLeftComponent(controlPanel);
 
@@ -149,21 +163,54 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnComAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        LoginJFrame loginpanel = new LoginJFrame();
+        loginpanel.setVisible(true);
+       
+        dispose();
+    }//GEN-LAST:event_btnComAdminActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        PatientJFrame patientpanel = new PatientJFrame();
+        patientpanel.setVisible(true);
+       
+        dispose();
+    }//GEN-LAST:event_btnPatientActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHosAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        LoginJFrame loginpanel = new LoginJFrame();
+        loginpanel.setVisible(true);
+       
+        dispose();
+    }//GEN-LAST:event_btnHosAdminActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        CreatePersonJFrame personpanel = new CreatePersonJFrame(list);
+       personpanel.setVisible(true);
+       
+       dispose();
+    }//GEN-LAST:event_btnPersonActionPerformed
+
+    private void btnSysAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSysAdminActionPerformed
+        // TODO add your handling code here:
+        LoginJFrame loginpanel = new LoginJFrame();
+       loginpanel.setVisible(true);
+       
+       dispose();
+    }//GEN-LAST:event_btnSysAdminActionPerformed
+
+    private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
+        // TODO add your handling code here:
+        LoginJFrame loginpanel = new LoginJFrame();
+        loginpanel.setVisible(true);
+       
+        dispose();
+
+    }//GEN-LAST:event_btnDoctorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,13 +249,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnComAdmin;
+    private javax.swing.JButton btnDoctor;
+    private javax.swing.JButton btnHosAdmin;
+    private javax.swing.JButton btnPatient;
+    private javax.swing.JButton btnPerson;
+    private javax.swing.JButton btnSysAdmin;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
