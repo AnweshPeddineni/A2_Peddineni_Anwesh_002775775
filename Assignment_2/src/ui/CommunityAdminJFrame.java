@@ -64,14 +64,10 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
         comboCommunity = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
         btnMale = new javax.swing.JRadioButton();
         btnFemale = new javax.swing.JRadioButton();
-        comboHospital = new javax.swing.JComboBox<>();
         btnBack = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
-        comboDoctor = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,13 +77,13 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
 
         tblCommunity.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Paient_Id", "Age", "Gender", "Number", "Email", "Address", "City", "Community", "Hospital", "Doctor"
+                "Name", "Paient_Id", "Age", "Gender", "Number", "Email", "Address", "City", "Community"
             }
         ));
         jScrollPane2.setViewportView(tblCommunity);
@@ -173,8 +169,6 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setText("Hospital Visited :");
-
         genderGroup.add(btnMale);
         btnMale.setText("Male");
         btnMale.addActionListener(new java.awt.event.ActionListener() {
@@ -205,8 +199,6 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-
-        jLabel19.setText("Doctor Visited :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,16 +238,14 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1083, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel8)
                     .addComponent(jLabel10)
                     .addComponent(jLabel7)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -266,9 +256,7 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
                             .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnMale)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -337,15 +325,7 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addGap(13, 13, 13))
+                .addGap(83, 83, 83))
         );
 
         pack();
@@ -386,8 +366,7 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
                             comboCity.setSelectedItem(personDetails.getCity());
                             System.out.println(personDetails.getCity());    
                             comboCommunity.setSelectedItem(personDetails.getCommunity());
-                            comboHospital.setSelectedItem(personDetails.getHospital());
-                            comboDoctor.setSelectedItem(personDetails.getDoctor());
+                            
                             System.out.println(personDetails.getHospital());
                             test = true;
                             break;
@@ -455,8 +434,7 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
         model.setValueAt(txtAddress.getText(), selectedRowIndex, 6);
         model.setValueAt(comboCity.getSelectedItem(), selectedRowIndex, 7);
         model.setValueAt(comboCommunity.getSelectedItem(), selectedRowIndex, 8);
-        model.setValueAt(comboHospital.getSelectedItem(), selectedRowIndex, 9);
-        model.setValueAt(comboDoctor.getSelectedItem(), selectedRowIndex, 10);
+        
         }
         else{
           JOptionPane.showMessageDialog(this, "Please Select a row to be updated.");
@@ -517,24 +495,17 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
     private void loadComboBoxData(){
         comboCity.removeAllItems();
         comboCommunity.removeAllItems();
-        comboHospital.removeAllItems();
-        comboDoctor.removeAllItems();
+        
         for(City city: SystemAdminJFrame.cityList){
             comboCity.addItem(city.getCityName());
         }
         for(City city:SystemAdminJFrame.cityList){
             comboCommunity.addItem(city.getCommunity());
         }
-        for(City city:SystemAdminJFrame.cityList){
-            comboHospital.addItem(city.getHospital());
-        }
-        for(Hospital hospital:HospitalJFrame.hospitalList){
-            comboDoctor.addItem(hospital.getDoctor());
-        }
+        
         comboCity.setSelectedIndex(-1);
         comboCommunity.setSelectedIndex(-1);
-        comboHospital.setSelectedIndex(-1); 
-        comboDoctor.setSelectedIndex(-1);
+        
     }
     
     private void populateTable() {
@@ -577,15 +548,11 @@ public class CommunityAdminJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> comboCity;
     private javax.swing.JComboBox<String> comboCommunity;
-    private javax.swing.JComboBox<String> comboDoctor;
-    private javax.swing.JComboBox<String> comboHospital;
     private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

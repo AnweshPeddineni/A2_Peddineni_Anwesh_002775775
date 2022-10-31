@@ -136,13 +136,13 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
 
         tblPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Patient Id", "Age", "Gender", "Person Number", "Email", "Address", "City", "Community", "Hospital", "Doctor"
+                "Name", "Patient Id", "Age", "Gender", "Person Number", "Email", "Address", "City", "Community"
             }
         ));
         jScrollPane2.setViewportView(tblPatient);
@@ -189,6 +189,11 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
         btnUpdateVital.setBackground(new java.awt.Color(153, 255, 204));
         btnUpdateVital.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btnUpdateVital.setText("Update");
+        btnUpdateVital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateVitalActionPerformed(evt);
+            }
+        });
 
         btnDeleteVital.setBackground(new java.awt.Color(255, 102, 102));
         btnDeleteVital.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -421,66 +426,64 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
                                 .addGap(7, 7, 7)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTemperature1)
-                            .addComponent(lblTemperature3)
-                            .addComponent(lblTemperature2))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboHos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboDoc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtEncounter))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(btnOther)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtSearchEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
+                                .addComponent(txtSearchEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnSearchVital, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(122, 122, 122)
+                                .addComponent(btnUpdateVital)
+                                .addGap(83, 83, 83)
+                                .addComponent(btnDeleteVital)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(229, 229, 229)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnUpdateVital)
+                                    .addComponent(lblTemperature1)
+                                    .addComponent(lblTemperature3)
+                                    .addComponent(lblTemperature2))
+                                .addGap(53, 53, 53)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(comboHos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboDoc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtEncounter)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(164, 164, 164)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel13))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(16, 16, 16)
-                                                .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGap(16, 16, 16)
+                                        .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(45, 45, 45)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel15))
-                                            .addComponent(jLabel14))
-                                        .addGap(33, 33, 33)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtSugarLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(83, 83, 83)
-                                        .addComponent(btnDeleteVital))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(214, 214, 214)))
-                        .addContainerGap(183, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel15))
+                                    .addComponent(jLabel14))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtSugarLevel)
+                                    .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -576,7 +579,7 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -594,7 +597,7 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel13)
                                     .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(26, 26, 26)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnUpdateVital)
                             .addComponent(btnDeleteVital))
@@ -687,6 +690,16 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Patient Profile deleted.");
         
         populateTable();
+        model.setRowCount(-1);
+        comboHos.setSelectedIndex(-1); 
+        comboDoc.setSelectedIndex(-1);
+        txtEncounter.setText("");
+        txtTemperature.setText("");
+        txtBloodPressure.setText("");
+        txtSugarLevel.setText("");
+        txtWeight.setText("");
+        txtSearchEncounter.setText("");
+        
                    
                
     }//GEN-LAST:event_btnDeletePersonActionPerformed
@@ -705,6 +718,38 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
 
     private void btnDeleteVitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteVitalActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = tblVitalSign.getSelectedRow();
+        
+        if (selectedRowIndex<0) {
+          JOptionPane.showMessageDialog(this, "Please Select a row to delete.");
+          return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tblVitalSign.getModel();
+        String PatientID  = (String) model.getValueAt(selectedRowIndex, 2);
+        //model.getValueAt(selectedRowIndex, 0);
+        VitalSign tempVital = null;
+        for(VitalSign vs:vhistory.getVitalList())
+               {
+           
+                    if(String.valueOf(vs.getPatientID()).equals(PatientID))
+                    {
+                        tempVital = vs;
+                        break;
+                    }
+               
+                    }
+        vhistory.deleteVitalSign(tempVital);
+        
+        JOptionPane.showMessageDialog(this, "Vital Sign deleted.");
+        comboHos.setSelectedIndex(-1); 
+        comboDoc.setSelectedIndex(-1);
+        txtEncounter.setText("");
+        txtTemperature.setText("");
+        txtBloodPressure.setText("");
+        txtSugarLevel.setText("");
+        txtWeight.setText("");
+        txtSearchEncounter.setText("");
     }//GEN-LAST:event_btnDeleteVitalActionPerformed
 
     private void txtTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTemperatureActionPerformed
@@ -843,6 +888,28 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEncounterKeyTyped
 
+    private void btnUpdateVitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateVitalActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblVitalSign.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) tblVitalSign.getModel();
+        if (selectedRowIndex >= 0)
+        {
+        
+        model.setValueAt(comboHos.getSelectedItem(), selectedRowIndex, 0);
+        model.setValueAt(comboDoc.getSelectedItem(), selectedRowIndex, 1);
+        model.setValueAt(txtEncounter.getText(), selectedRowIndex, 3);
+        model.setValueAt(txtTemperature.getText(), selectedRowIndex, 4);
+        model.setValueAt(txtBloodPressure.getText(), selectedRowIndex, 5);
+        model.setValueAt(txtSugarLevel.getText(), selectedRowIndex, 6);
+        model.setValueAt(txtWeight.getText(), selectedRowIndex, 7);
+        
+        }
+        else{
+          JOptionPane.showMessageDialog(this, "Please Select a row to be updated.");
+        
+        }    
+    }//GEN-LAST:event_btnUpdateVitalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -874,12 +941,12 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
         
         DefaultTableModel model = (DefaultTableModel) tblVitalSign.getModel();
         model.setRowCount(0);
+        String patient_ID =txtSearchValue.getText();
         
         for (VitalSign vs : vhistory.getVitalList())
         {
-            for(Person pd:phistory.getHistory())
-            {
-                if(String.valueOf(vs.getPatientID()).equals(String.valueOf(pd.getPatientId())))
+            
+                if(String.valueOf(vs.getPatientID()).equals(patient_ID))
                     {
                         Object[] row = new Object[8];
                         row[0] = vs.getHospitalName();
@@ -896,13 +963,13 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
                     }
         
             
-            }
+            
         }
     }
     private void populateTable() {
         
-        DefaultTableModel model = (DefaultTableModel) tblPatient.getModel();
-        model.setRowCount(0);
+        DefaultTableModel modela = (DefaultTableModel) tblPatient.getModel();
+        modela.setRowCount(0);
         
         for (Person pd : phistory.getHistory()){
           
@@ -919,7 +986,7 @@ public class SystemSearchJFrame extends javax.swing.JFrame {
             row[9] = pd.getHospital();
             row[10] = pd.getDoctor();
             
-            model.addRow(row);
+            modela.addRow(row);
             
         
             
